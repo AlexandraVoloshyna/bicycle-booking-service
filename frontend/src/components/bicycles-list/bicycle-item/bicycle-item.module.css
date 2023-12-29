@@ -1,0 +1,84 @@
+.bicycle{
+    background-color: #E8E8E8;
+    border-radius: 10px;
+    color: #000;
+    font-family: Saira;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
+.select-list{
+    text-transform: capitalize;
+}
+
+.select-item:hover{
+    border-bottom: 2px solid #717171;
+    background-color: #ffffff;
+}
+.select-header{
+    display: flex;
+    gap: 3px;
+    text-transform: capitalize;
+}
+.select-btn{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.select-btn img{
+    vertical-align: middle;
+}
+
+.col-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.col-1{
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+}
+.btn{
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.status{
+    display: flex;
+    gap: 18px;
+}
+.price{
+    font-size: 24px;
+}
+.id{
+    color: #717171;
+    text-transform: uppercase;
+}
+.name, .status{
+    text-transform: uppercase;
+}
+.name span{
+    color: #333;
+    font-weight: 700;
+}
+.available{
+    border: 2px solid #6FCF97;
+}
+.unavailable{
+    border: 2px solid #EB5757;
+    opacity: 0.5;
+}
+.busy{
+    border: 2px solid #F2994A;
+}
+.open{
+    rotate: 180deg;
+    transition: all 250ms ease;
+}
+.closed{
+    transition: all 250ms ease;
+}

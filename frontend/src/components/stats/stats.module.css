@@ -1,0 +1,10 @@
+.title, .count{
+    font-size: 18px;
+    font-weight: 700;
+}
+.stats{
+    color: #000;
+    font-family: Saira;
+    font-size: 14px;
+    padding-top: 10px;
+}
