@@ -20,7 +20,7 @@ function BicyclesList() {
                             description={bike.description} 
                             type={bike.type} 
                             size={bike.size}
-                            price={bike.size}
+                            price={bike.price}
                             status={bike.status}
                             id={bike._id}
                               />)}
