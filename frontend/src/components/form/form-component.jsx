@@ -122,8 +122,8 @@ function Form() {
             value={formik.values.id}
             placeholder="ID (slug): ХХХХХХХХХХХХХ"
              />
-             {formik.touched.slug && formik.errors.slug ? (
-            <div className={styles.error}>{formik.errors.slug}</div>
+             {formik.touched.id && formik.errors.id ? (
+            <div className={styles.error}>{formik.errors.id}</div>
             ) : null}
         </div>
         <div className={styles["input-group"]}>
