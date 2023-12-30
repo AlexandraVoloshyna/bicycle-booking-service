@@ -51,11 +51,11 @@ export const updateStatus = async (req, res, next)=>{
 
         if (!id) {
             res.status(500)
-            throw new Error("id is out")
+            throw new Error("no id found")
         }
         if(!value){
             res.status(500)
-            throw new Error(`no value found ${req}`)
+            throw new Error('no value found')
         }
         const newStatus = await service.updateBicycleStatus(id, value)
          res.status(200).json({message: "status updated successfully", newStatus})
