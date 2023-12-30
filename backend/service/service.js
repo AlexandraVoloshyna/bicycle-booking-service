@@ -41,7 +41,7 @@ export const createBicycle = async (id,  name, color, price, size, type, descrip
     export const updateBicycleStatus = async ( id, status)=>{
         
         const data = await bicycleModel.findOne({_id: id });
-        if(!data) throw new Error("no iid found")
+        if(!data) throw new Error("no data found")
         data.status = status
         await data.save();
         return data.status
