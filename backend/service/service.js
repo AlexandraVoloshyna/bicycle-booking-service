@@ -23,13 +23,21 @@ export const createBicycle = async (id,  name, color, price, size, type, descrip
         return data
     }
     export const getBiyclesStats = async()=>{
-        const data = await bicycleModel.find();
-
-        const allCount = data.length;
-        const availableCount = data.filter(bicycle => bicycle.status === 'available').length;
-        const busyCount = data.filter(bicycle => bicycle.status === 'busy').length;
-        const totalPrices = data.reduce((acc, bicycle) => acc + bicycle.price, 0);
+       const allCount = await bicycleModel.countDocuments();
+        const availableCount = await bicycleModel.countDocuments({ status: 'available' });
+        const busyCount = await bicycleModel.countDocuments({ status: 'busy' });
+        const totalPricesResult = await bicycleModel.aggregate([
+          {
+            $group: {
+              _id: null,
+              totalPrices: { $sum: '$price' }
+            }
+          }
+        ]);
+        
+        const totalPrices = totalPricesResult.length > 0 ? totalPricesResult[0].totalPrices : 0;
         const averagePrice = allCount > 0 ? totalPrices / allCount : 0;
+
     
         return {
           all: allCount,
