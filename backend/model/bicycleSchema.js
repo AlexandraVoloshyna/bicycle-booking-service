@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const bicycleSchema  = new Schema(
     {
-        _id:{
+        slug:{
             type: String,
             required: true,
         },
@@ -33,6 +33,7 @@ const bicycleSchema  = new Schema(
         status:{
             type: String,
             required: true,
+            enum: ['available', 'busy', 'unavailable'],
             default: 'available'
         },
 

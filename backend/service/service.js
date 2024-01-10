@@ -1,12 +1,16 @@
+import { AppError } from "../middleware/errorMiddleware.js";
 import bicycleModel from "../model/bicycleSchema.js"
-export const createBicycle = async (id,  name, color, price, size, type, description, res) => {
+
+
+
+export const createBicycle = async (data) => {
+    const {slug, name, color, description, type, price, size} = data
     const bicycle = await bicycleModel.findOne({_id: id }); 
     if(bicycle){
-        res.status(400)
-        throw new Error("Bicycle with the id is already exist, try another one")
+        throw new AppError("Bicycle with the id is already exist, try another one", 400)
     }
     const newBicycle = new bicycleModel({
-        _id: id,
+        slug,
        name,
        color,
        description,
@@ -49,12 +53,12 @@ export const createBicycle = async (id,  name, color, price, size, type, descrip
     export const updateBicycleStatus = async ( id, status)=>{
         
         const data = await bicycleModel.findOne({_id: id });
-        if(!data) throw new Error("no data found")
+        if(!data) throw new AppError(" there is no bicycle with such id", 400)
         data.status = status
         await data.save();
         return data.status
     }
     export const removeBicycle = async (id)=>{
-        await bicycleModel.findByIdAndDelete({ _id: id } );
+        await bicycleModel.findByIdAndDelete(id);
         
     }

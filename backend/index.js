@@ -1,6 +1,6 @@
 import  express  from "express";
 import { connectDB } from "./config/connectDb.js";
-import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+import { errorHandler} from "./middleware/errorMiddleware.js";
 import route from "./router/router.js"
 import cors from "cors"
 
@@ -17,7 +17,6 @@ const Port = process.env.PORT || 5001
     }))
     app.use('/api', route )
 
-    app.use(notFound)
     app.use(errorHandler)
 
     app.listen( Port,()=>{

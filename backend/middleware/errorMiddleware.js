@@ -1,19 +1,18 @@
-export const notFound = (req, res, next) =>{
-    const error = new Error (` ${req.originalUrl} is not Found`)
-    res.status(404)
-    next(error)
-}
+export class AppError extends Error {
+   constructor(message, statusCode) {
+     super(message);
+     this.statusCode = statusCode;
+   }
+ }
 
-export const errorHandler = (error, req, res, next) => {
-    let status = res.statusCode === 200 ? 500 : res.statusCode
-    let message = error.message
-     if(error.name === "CastError" && error.kind === 'ObjectId' ){
-        status = 404 
-        message = 'Not Found'
-     }
-
-     res.status(status).json({
-        message,
-     })
-     
-}
+export const errorHandler = (err, req, res, next) => {
+   if (err instanceof AppError) {
+     res.status(err.statusCode).json({
+       message: err.message,
+     });
+   } else {
+     res.status(500).json({
+       message: 'Something went wrong!',
+     });
+   }
+ }

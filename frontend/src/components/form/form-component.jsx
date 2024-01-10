@@ -12,7 +12,7 @@ function Form() {
           color: '',
           price: 0,
           type: '',
-          id: '',
+          slug: '',
           size: 0,
           description: ''
         },
@@ -28,7 +28,7 @@ function Form() {
             .min(5, 'Must be at least 5 characters long ')
             .required('Required'),
             size: Yup.number('Enter a valid number').positive().required('Required'),
-            id: Yup.string()
+            slug: Yup.string()
             .min(5, 'Must be at least 5 characters long')
             .required('Required'),
             description: Yup.string()
@@ -117,13 +117,13 @@ function Form() {
             <input
             className={styles["input-control"]}
             type="text"
-            name="id"
+            name="slug"
             onChange={formik.handleChange}
-            value={formik.values.id}
+            value={formik.values.slug}
             placeholder="ID (slug): ХХХХХХХХХХХХХ"
              />
-             {formik.touched.id && formik.errors.id ? (
-            <div className={styles.error}>{formik.errors.id}</div>
+             {formik.touched.slug && formik.errors.slug ? (
+            <div className={styles.error}>{formik.errors.slug}</div>
             ) : null}
         </div>
         <div className={styles["input-group"]}>
