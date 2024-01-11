@@ -15,7 +15,17 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
-    ],
-      "react/prop-types": "off"
+      ],
+      "react/prop-types": "off",
+      "indent": ["error", 2],
+      "quotes": ["error", "single", { "avoidEscape": true }],
+      "keyword-spacing": ["error", { "before": true }],
+      "space-before-function-paren": ["error", "always"],
+      "eqeqeq": ["error", "always"],
+      "space-infix-ops": "error",
+      "comma-spacing": ["error", { "after": true }],
+      "brace-style": "error",
+      
+
   },
 }

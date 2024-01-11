@@ -1,5 +1,5 @@
-import { Router } from "express"
-import { addBicycle, getBiycles, getStats, updateStatus, deleteBicycle } from "../controller/controller.js"
+import { Router } from 'express'
+import { addBicycle, getBiycles, getStats, updateStatus, deleteBicycle } from '../controller/controller.js'
 
 const router = new Router()
 
