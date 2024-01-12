@@ -16,7 +16,7 @@ export const getBiycles = async (req, res, next)=>{
     if (bicycles) {
       res.status(200).json(bicycles)
     } else {
-      res.status(404).json([])
+      res.status(200).json([])
              
     }
   } catch (error) {
@@ -31,7 +31,7 @@ export const getStats = async (req, res, next)=>{
     if (statistics) {
       res.status(200).json(statistics)
     } else {
-      res.status(404).json([])
+      res.status(200).json([])
              
     }
   } catch (error) {
