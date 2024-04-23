@@ -1,9 +1,9 @@
-# MERN Admin Panel App
+# MERN Bicycle Booking Service App
 
 
 ## Installation
 
-1. Clone this repository: `git clone https://github.com/AlexandraVoloshyna/admin-panel-mern.git`
+1. Clone this repository: 
 2. Navigate to the project directory
 3. Install server dependencies: `npm install` from backend directory
 4. Install client dependencies: `npm install` from frontend directory
